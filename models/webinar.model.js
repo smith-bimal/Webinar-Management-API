@@ -13,7 +13,8 @@ const webinarSchema = new Schema({
         enum: ['active', 'inactive'],
         default: 'active'
     },
-    thumbnail_url: { type: String }
+    thumbnail_url: { type: String },
+    view_count: { type: Number, default: 0, min: 0 },
 }, { timestamps: true })
 
 const Webinar = model('Webinar', webinarSchema);

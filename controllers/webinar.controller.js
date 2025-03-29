@@ -24,6 +24,9 @@ const getWebinarById = async (req, res) => {
         if (!webinar) {
             return res.status(404).json({ success: false, error: 'Webinar not found' });
         }
+
+        webinar.view_count++;
+        webinar.save();
         res.status(200).json({ success: true, data: webinar });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
