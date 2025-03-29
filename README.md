@@ -37,8 +37,8 @@ A RESTful API backend for managing webinars built with Node.js, Express, and Mon
 
 ```
 POST /api/auth/signup    - to register a new account
-POST /api/auth/login       - to login the user
-POST /api/auth/me          - to get user details
+POST /api/auth/login     - to login the user
+GET /api/auth/me         - to get user details
 ```
 
 ### Webinars
@@ -47,7 +47,7 @@ POST /api/auth/me          - to get user details
 GET /api/webinars         - Get all webinars (Auth required)
 GET /api/webinars/:id     - Get webinar by ID (Auth required)
 POST /api/webinars        - Create new webinar (Auth required)
-PUT /api/webinars/:id     - Update webinar (Auth required)
+PATCH /api/webinars/:id     - Update webinar (Auth required)
 DELETE /api/webinars/:id  - Delete webinar (Auth required)
 ```
 
