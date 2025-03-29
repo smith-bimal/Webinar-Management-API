@@ -7,7 +7,6 @@ A RESTful API backend for managing webinars built with Node.js, Express, and Mon
 - Node.js & Express.js
 - MongoDB with Mongoose
 - JWT for Authentication
-- Cloudinary for Media Storage
 
 ## Database Schema
 
