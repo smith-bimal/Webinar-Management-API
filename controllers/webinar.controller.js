@@ -26,7 +26,7 @@ const getWebinarById = async (req, res) => {
         }
 
         webinar.view_count++;
-        webinar.save();
+        webinar = webinar.save();
         res.status(200).json({ success: true, data: webinar });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
