@@ -3,8 +3,7 @@ import User from "../models/user.model.js";
 
 const authenticate = async (req, res, next) => {
     try {
-        console.log(req.headers.get('Authorization'));
-        const token = req.headers.authorization;
+        let token = req.headers.authorization;
         token = token.replace("Bearer ", "");
         if (!token) {
             return res.status(401).json({ message: "Authentication token missing" });

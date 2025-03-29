@@ -10,6 +10,14 @@ A RESTful API backend for managing webinars built with Node.js, Express, and Mon
 
 ## Database Schema
 
+### User Model
+
+- name (String, required)
+- email (String, required, unique)
+- password (String, required)
+- phone (String, required)
+- timestamps (created_at, updated_at)
+
 ### Webinar Model
 
 - title (String, required)
@@ -28,7 +36,7 @@ A RESTful API backend for managing webinars built with Node.js, Express, and Mon
 ### Authentication
 
 ```
-POST /api/auth/register    - to register a new account
+POST /api/auth/signup    - to register a new account
 POST /api/auth/login       - to login the user
 POST /api/auth/me          - to get user details
 ```
@@ -44,6 +52,38 @@ DELETE /api/webinars/:id  - Delete webinar (Auth required)
 ```
 
 ## API Request/Response Formats
+
+### User Registration
+
+```json
+POST /api/auth/signup
+Body: {
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "strongpassword123",
+  "phone": "+1234567890"
+}
+
+Response: {
+  "token": "jwt_token_here",
+  "userId": "user_id_here"
+}
+```
+
+### User Login
+
+```json
+POST /api/auth/login
+Body: {
+  "email": "john@example.com",
+  "password": "strongpassword123"
+}
+
+Response: {
+  "token": "jwt_token_here",
+  "userId": "user_id_here"
+}
+```
 
 ### Create Webinar
 
