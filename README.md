@@ -29,16 +29,16 @@ A RESTful API backend for managing webinars built with Node.js, Express, and Mon
 ### Authentication
 
 ```
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/login
+POST /api/auth/register    - to register a new account
+POST /api/auth/login       - to login the user
+POST /api/auth/me          - to get user details
 ```
 
 ### Webinars
 
 ```
-GET /api/webinars         - Get all webinars
-GET /api/webinars/:id     - Get webinar by ID
+GET /api/webinars         - Get all webinars (Auth required)
+GET /api/webinars/:id     - Get webinar by ID (Auth required)
 POST /api/webinars        - Create new webinar (Auth required)
 PUT /api/webinars/:id     - Update webinar (Auth required)
 DELETE /api/webinars/:id  - Delete webinar (Auth required)
@@ -93,9 +93,7 @@ Body: {
    ```
    MONGODB_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API_KEY=your_api_key
-   CLOUDINARY_API_SECRET=your_api_secret
+   PORT=your_port_number
    ```
 4. Run development server: `npm run dev`
 5. Run production server: `npm start`
