@@ -20,7 +20,7 @@ const getAllActiveWebinars = async (req, res) => {
 
 const getWebinarById = async (req, res) => {
     try {
-        const webinar = await Webinar.findById(req.params.id);
+        let webinar = await Webinar.findById(req.params.id);
         if (!webinar) {
             return res.status(404).json({ success: false, error: 'Webinar not found' });
         }
